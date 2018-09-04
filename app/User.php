@@ -41,4 +41,15 @@ class User extends Authenticatable
     {
       return $this->hasMany('App\Reaction');
     }
+
+    // MUTATORS
+    public function setNameAttribute($value)
+    {
+      $result = '';
+      $resultarray = split($this->attributes['password'], ' ');
+      foreach ($resultarray as $word) {
+        $result = $result . ucfirst($word);
+      }
+      $this->attributes['password'] = $result;
+    }
 }
