@@ -79,6 +79,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+      flash()->success('Account deleted!');
+      return Redirect::to('/');
     }
 }
