@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('main');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => ['auth']], function() {
+  Route::get('/account', 'UserController@show')->name('account');
+  Route::get('/account/edit', 'UserController@edit')->name('account-edit');
+});
+
+Route::resource('posts', 'PostController', ['except' => ['edit', 'update']]);
+Route::resource('comments', 'CommentController', ['except' => ['edit', 'update']]);
