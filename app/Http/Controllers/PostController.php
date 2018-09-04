@@ -36,7 +36,9 @@ class PostController extends Controller
      */
     public function store(StorePost $request)
     {
-        //
+      $post = Post::create($request->all());
+
+      //return redirect(route();
     }
 
     /**
@@ -47,7 +49,6 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**

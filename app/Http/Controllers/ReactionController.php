@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Reaction;
+use Auth\User;
 
 class ReactionController extends Controller
 {
@@ -30,12 +31,13 @@ class ReactionController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($post, $reaction)
     {
-        //
+      $reaction = Reaction::create($reaction->all());
+
+      //return redirect(route();
     }
 
     /**

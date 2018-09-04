@@ -35,7 +35,9 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $comment = Comment::create($request->all());
+
+      //return redirect(route();
     }
 
     /**

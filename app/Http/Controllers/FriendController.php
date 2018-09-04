@@ -35,7 +35,9 @@ class FriendController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $friend = Friend::create($request->all());
+
+      //return redirect(route();
     }
 
     /**
