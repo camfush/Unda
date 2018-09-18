@@ -59,6 +59,10 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
+      $post = Post::find($id);
+      $post->comments()->delete();
+      $post->reactions()->delete();
+      $post->delete();
       flash()->success('Post deleted!');
       return Redirect::to('/');
     }
