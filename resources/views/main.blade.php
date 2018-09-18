@@ -20,10 +20,10 @@
 			<nav id="mainnav">
 				<ul>
 	            	<li class="selected-item"><a href="index.html">Home</a></li>
-	           		<li><a href="#">My account</a></li>
-	           		<li><a href="#">Upload</a></li>
-	            	<li><a href="#">Friends</a></li>
-	            	<li><a href="#">Settings</a></li>
+	           		<li><a href="{{URL::to('/account')}}">My account</a></li>
+	           		<li><a href="{{URL::to('/posts/create')}}">Upload</a></li>
+	            	<li><a href="{{URL::to('/')}}">Friends</a></li>
+	            	{{--<li><a href="">Settings</a></li>--}}
 	        	</ul>
 			</nav>
 		</aside>
