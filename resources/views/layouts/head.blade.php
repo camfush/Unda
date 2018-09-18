@@ -9,6 +9,7 @@
     <link rel="mask-icon" href="{{URL::to('safari-pinned-tab.svg')}}" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#191919">
     <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -21,5 +22,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}" type="text/css" />
     <title>@yield('page-title', config('app.name')) | {{config('app.name')}}</title>
 </head>
