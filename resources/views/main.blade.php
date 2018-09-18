@@ -28,37 +28,11 @@
 			</nav>
 		</aside>
 
+    {{-- Replace later with actual content --}}
 		<section class="column-middle">
-		   <div class="post">
-			    <video width="665" height="480" controls></video>
-				    <section id="interact_bar">
-					    <a class="button" id='b_love'>Love</a>
-					    <a class="button" id='b_hate'>Hate</a>
-					    <a class="button" id='b_comment'>Comment</a>
-					    <a class="button" id='b_share'>Share</a>
-					</section>
-			</div>
-
-			<div class="post">
-			    <video width="665" height="432" controls></video>
-				    <section id="interact_bar">
-					    <a class="button" id='b_love'>Love</a>
-					    <a class="button" id='b_hate'>Hate</a>
-					    <a class="button" id='b_comment'>Comment</a>
-					    <a class="button" id='b_share'>Share</a>
-					</section>
-			</div>
-
-			<div class="post">
-			    <video width="665" height="432" controls></video>
-				    <section id="interact_bar">
-					    <a class="button" id='b_love'>Love</a>
-					    <a class="button" id='b_hate'>Hate</a>
-					    <a class="button" id='b_comment'>Comment</a>
-					    <a class="button" id='b_share'>Share</a>
-					</section>
-			</div>
-
+      @for ($i=0; $i < 5; $i++)
+        @include('posts.show')
+      @endfor
 		</section>
 
 		<section class="column-right">
