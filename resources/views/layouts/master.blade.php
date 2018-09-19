@@ -6,9 +6,9 @@
       <div class="app" id="app">
     @include('layouts.header')
     @yield('content')
-    @include('layouts.footer')
       </div>
     </div>
+    @include('layouts.footer')
     <!-- Reference block for JS -->
     <div class="ref" id="ref">
         <div class="color-primary"></div>
@@ -18,6 +18,6 @@
         </div>
     </div>
   </body>
-  <script src="js/vendor.js"></script>
-  <script src="js/app.js"></script>
+  <script src="{{URL::to('js/vendor.js')}}"></script>
+  <script src="{{URL::to('js/app.js')}}"></script>
 </html>
