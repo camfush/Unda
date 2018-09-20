@@ -1,5 +1,10 @@
 @extends('layouts.master')
 @section('page-title', 'View your details')
+@push('scripts')
+  <script src="{{ asset('js/edit-toggle.js') }}"></script>
+
+  <script src="{{ asset('js/app.js') }}" defer></script>
+@endpush
 
 @section('content')
   <aside class="sidebar">
@@ -56,13 +61,13 @@
               <legend>General</legend>
               <table class="table table-condensed table-responsive small">
                 <tbody>
-                  <tr class="d">
+                  <tr id="name">
                     <td>Name</td>
                     <td>Cameron Frost</td>
-                    <td><a href="">Edit</a></td>
+                    <td><button id="edit-name" href="">Edit</button></td>
                   </tr>
                   <!--Different row is displayed when user clicks edit - toggle the display of the rows-->
-                  <tr class="d-none">
+                  <tr id="name-edit" style="display:none;">
                     <td>Name</td>
                     <td>
                         <form>
@@ -96,23 +101,23 @@
                     </td>
                     <td><td>
                   </tr>
-                  <tr>
-                    <td>Display Name</td>
+                  <tr id="user">
+                    <td>User Name</td>
                     <td>CamFush</td>
-                    <td><a href="">Edit</a></td>
+                    <td><button id="edit-user" href="">Edit</button></td>
                   </tr>
-                  <tr class="d-none">
-                    <td>Display Name</td>
+                  <tr id="user-edit" style="display:none;">
+                    <td>User Name</td>
                     <td>
                         <form>
                           <fieldset>
-                            <legend class="col-lg-12 text-center">Edit Display Name</legend>
+                            <legend class="col-lg-12 text-center">Edit User Name</legend>
                             <br />
 
                             <div class="row">
-                              <label class="col-lg-3" for="new-display">Display Name: </label>
-                              <input class="col-lg-5" type="text" id="new-display" />
-                              <label class="col-lg-4" id="display-availability">Name is available</label>
+                              <label class="col-lg-3" for="new-user">User Name: </label>
+                              <input class="col-lg-5" type="text" id="new-user" />
+                              <label class="col-lg-4" id="user-availability">Name is available</label>
                             </div>
 
                             <br />
@@ -127,12 +132,12 @@
                     </td>
                     <td></td>
                   </tr>
-                  <tr>
+                  <tr id="email">
                     <td>Email</td>
                     <td>102102571@student.swin.edu.au</td>
-                    <td><a href="">Edit</a></td>
+                    <td><button id="edit-email" href="">Edit</button></td>
                   </tr>
-                  <tr class="d-none">
+                  <tr id="email-edit" style="display:none;">
                     <td>Email</td>
                     <td>
                         <form>
@@ -166,12 +171,12 @@
                     </td>
                     <td><td>
                   </tr>
-                  <tr>
+                  <tr id="password">
                     <td>Password</td>
                     <td>**********</td>
-                    <td><a href="">Edit</a></td>
+                    <td><button id="edit-password" href="">Edit</button></td>
                   </tr>
-                  <tr class="d-none">
+                  <tr id="password-edit" style="display:none;">
                     <td>Email</td>
                     <td>
                         <form>
@@ -180,9 +185,9 @@
                             <br />
 
                             <div class="row">
-                              <label class="col-lg-3" for="password">Old Password: </label>
-                              <input class="col-lg-5" type="text" id="password" />
-                              <label class="col-lg-4" id="password-validity"></label>
+                              <label class="col-lg-3" for="old-password">Old Password: </label>
+                              <input class="col-lg-5" type="text" id="old-password" />
+                              <label class="col-lg-4" id="password-correct"></label>
                             </div>
 
                             <br />
