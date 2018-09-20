@@ -16,8 +16,8 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth']], function() {
-  Route::get('/account', 'UserController@show')->name('account');
-  Route::get('/account/edit', 'UserController@edit')->name('account-edit');
+  Route::get('/account', 'UserController@account')->name('account');
+  Route::get('/account/edit', 'UserController@account')->name('account-edit');
 });
 
 Route::resource('posts', 'PostController', ['except' => ['edit', 'update']]);
