@@ -22,7 +22,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset ('css/vendor.css') }}">
     <title>@yield('page-title', config('app.name')) | {{config('app.name')}}</title>
     <script>
