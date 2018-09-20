@@ -24,7 +24,7 @@ class StorePost extends FormRequest
     public function rules()
     {
         return [
-            //
+            'post' => 'mimetypes:video/avi,video/mpeg'
         ];
     }
 }
