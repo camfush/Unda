@@ -3,25 +3,14 @@
 
 @section('content')
     <article class="content dashboard-page">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-9" id="video">
-            <video controls><source src="" type="video/mp4"/></video>
+      @for ($i=0; $i < 10; $i++)
+        @include('posts.show')
+      @endfor
 
-          </div>
-          <div class="col-lg-3 comments" style="background-color: #d7dde4">
-            <p><h3>Comments</h3></p>
-
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-9 m-1 interact-bar">
-            <button type="button" class="btn custom-button">Love</button>
-            <button type="button" class="btn custom-button">Hate</button>
-            <button type="button" class="btn custom-button">Share</button>
-            <button type="button" class="btn custom-button">Report</button>
-          </div>
-        </div>
-      </div>
+      {{-- Show the user's timeline
+      @foreach (Auth::user()->timeline as $post)
+        @include('posts.show', ['element' => $post])
+      @endforeach
+      --}}
     </article>
   @endsection

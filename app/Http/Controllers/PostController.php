@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Http\Requests\StorePost;
+use Carbon;
 
 class PostController extends Controller
 {
@@ -36,6 +37,9 @@ class PostController extends Controller
      */
     public function store(StorePost $request)
     {
+      $ffmpeg = FFMpeg\FFMpeg::create();
+      $video = $ffmpeg->open($request->input('video'));
+      $video->save(new FFMpeg\Format\Video\X264(), md5(Carbon::now()) . '.mp4');
       $post = Post::create($request->all());
 
       //return redirect(route();
