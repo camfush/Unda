@@ -8,7 +8,7 @@
     <nav class="menu">
       <ul class="sidebar-menu metismenu" id="sidebar-menu">
         <li class="active">
-          <a href="index.html">
+          <a href="{{URL::to('/')}}">
             <i class="fa fa-home"></i> Home </a>
           </li>
           <li>
@@ -18,10 +18,10 @@
             </a>
             <ul class="sidebar-nav">
               <li>
-                <a href="items-list.html"> New upload </a>
+                <a href="{{URL::to('/item-list')}}"> New upload </a>
               </li>
               <li>
-                <a href="item-editor.html"> Video Editor </a>
+                <a href="{{URL::to('/item-editor')}}"> Video Editor </a>
               </li>
             </ul>
           </li>
