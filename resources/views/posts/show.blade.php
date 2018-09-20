@@ -6,7 +6,9 @@
     </div>
     <div class="col-lg-3 comments" style="background-color: #d7dde4">
       <p><h3>Comments</h3></p>
-
+        @foreach ($element->comments() as $comment)
+          @include('comments.show', ['element' => $comment])
+        @endforeach
     </div>
   </div>
   <div class="row">
