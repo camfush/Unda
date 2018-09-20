@@ -5,6 +5,7 @@
     <div class="main-wrapper">
       <div class="app" id="app">
     @include('layouts.header')
+    @include('layouts.sidebar')
     @yield('content')
       </div>
     </div>
