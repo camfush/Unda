@@ -64,40 +64,154 @@
                   <!--Different row is displayed when user clicks edit - toggle the display of the rows-->
                   <tr class="d-none">
                     <td>Name</td>
-                    <td colspan="3">
+                    <td>
                         <form>
                           <fieldset>
                             <legend class="col-lg-12 text-center">Edit Name</legend>
+                            <br />
 
                             <div class="row">
                               <label class="col-lg-3" for="new-first">First Name: </label>
-                              <input class="col-lg-4" type="text" id="new-first" />
-                              <label class="col-lg-3"><!--TODO Add glyphicon tick -->Name is valid</label>
-                              <div class="col-lg-2"></div>
+                              <input class="col-lg-5" type="text" id="new-first" />
+                              <label class="col-lg-4" id="first-validity"><!--TODO Add glyphicon tick -->Name is valid</label>
                             </div>
+
+                            <br />
 
                             <div class="row">
-                              <div class="col-lg-12"></div>
                               <label class="col-lg-3" for="new-last">Last Name: </label>
-                              <input class="col-lg-4" type="text" id="new-last" />
-                              <label class="col-lg-3">Name is valid</label>
-                              <div class="col-lg-2"></div>
+                              <input class="col-lg-5" type="text" id="new-last" />
+                              <label class="col-lg-4" id="last-validity">Name is valid</label>
                             </div>
 
-                            <button class="btn btn-default" type="submit">Save Changes</button>
+                            <br />
+
+                            <div class="row">
+                              <div class="col-lg-4"></div>
+                              <input class="small col-lg-2 center-block btn btn-primary" type="submit" value="Update"/>
+                              <div class="col-lg-6"></div>
+                            </div>
                           </fieldset>
                         </form>
                     </td>
+                    <td><td>
                   </tr>
                   <tr>
                     <td>Display Name</td>
                     <td>CamFush</td>
                     <td><a href="">Edit</a></td>
                   </tr>
+                  <tr class="d-none">
+                    <td>Display Name</td>
+                    <td>
+                        <form>
+                          <fieldset>
+                            <legend class="col-lg-12 text-center">Edit Display Name</legend>
+                            <br />
+
+                            <div class="row">
+                              <label class="col-lg-3" for="new-display">Display Name: </label>
+                              <input class="col-lg-5" type="text" id="new-display" />
+                              <label class="col-lg-4" id="display-availability">Name is available</label>
+                            </div>
+
+                            <br />
+
+                            <div class="row">
+                              <div class="col-lg-4"></div>
+                              <input class="small col-lg-2 center-block btn btn-primary" type="submit" value="Update"/>
+                              <div class="col-lg-6"></div>
+                            </div>
+                          </fieldset>
+                        </form>
+                    </td>
+                    <td></td>
+                  </tr>
                   <tr>
                     <td>Email</td>
                     <td>102102571@student.swin.edu.au</td>
                     <td><a href="">Edit</a></td>
+                  </tr>
+                  <tr class="d-none">
+                    <td>Email</td>
+                    <td>
+                        <form>
+                          <fieldset>
+                            <legend class="col-lg-12 text-center">Change Email</legend>
+                            <br />
+
+                            <div class="row">
+                              <label class="col-lg-3" for="new-email">Email: </label>
+                              <input class="col-lg-5" type="text" id="new-email" />
+                              <label class="col-lg-4" id="email-validity">Email is valid</label>
+                            </div>
+
+                            <br />
+
+                            <div class="row">
+                              <label class="col-lg-3" for="conf-email">Confirm Email: </label>
+                              <input class="col-lg-5" type="text" id="conf-email" />
+                              <label class="col-lg-4" id="email-match">Email does not match</label>
+                            </div>
+
+                            <br />
+
+                            <div class="row">
+                              <div class="col-lg-4"></div>
+                              <input class="small col-lg-2 center-block btn btn-primary" type="submit" value="Verify"/>
+                              <div class="col-lg-6"></div>
+                            </div>
+                          </fieldset>
+                        </form>
+                    </td>
+                    <td><td>
+                  </tr>
+                  <tr>
+                    <td>Password</td>
+                    <td>**********</td>
+                    <td><a href="">Edit</a></td>
+                  </tr>
+                  <tr class="d-none">
+                    <td>Email</td>
+                    <td>
+                        <form>
+                          <fieldset>
+                            <legend class="col-lg-12 text-center">Change Password</legend>
+                            <br />
+
+                            <div class="row">
+                              <label class="col-lg-3" for="password">Old Password: </label>
+                              <input class="col-lg-5" type="text" id="password" />
+                              <label class="col-lg-4" id="password-validity"></label>
+                            </div>
+
+                            <br />
+
+                            <div class="row">
+                              <label class="col-lg-3" for="new-password">New Password: </label>
+                              <input class="col-lg-5" type="text" id="new-password" />
+                              <label class="col-lg-4" id="password-validity">Password must be 8 characters</label>
+                            </div>
+
+                            <br />
+
+                            <div class="row">
+                              <label class="col-lg-3" for="conf-password">Confirm Password: </label>
+                              <input class="col-lg-5" type="text" id="conf-password" />
+                              <label class="col-lg-4" id="password-match">Password does not match</label>
+                            </div>
+
+                            <br />
+
+                            <div class="row">
+                              <div class="col-lg-4"></div>
+                              <input class="small col-lg-2 center-block btn btn-primary" type="submit" value="Update"/>
+                              <div class="col-lg-6"></div>
+                            </div>
+                          </fieldset>
+                        </form>
+                    </td>
+                    <td><td>
                   </tr>
                 </tbody>
               </table>

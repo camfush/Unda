@@ -16,7 +16,7 @@ class HomeController extends Controller
         return view('main');
     }
 
-    public function show()
+    public function account()
     {
         return view('/account/account-settings');
     }
