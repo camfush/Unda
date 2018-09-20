@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-9" id="video">
-      <video controls><source src="" type="video/mp4"/></video>
+      <video controls><source src="{{-- Storage::url('posts/' . $element->hash . '.mp4') --}}" type="video/mp4"/></video>
 
     </div>
     <div class="col-lg-3 comments" style="background-color: #d7dde4">
