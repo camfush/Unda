@@ -14,9 +14,10 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/account', 'HomeController@account')->name('home');
 
 Route::group(['middleware' => ['auth']], function() {
-  Route::get('/account', 'UserController@account')->name('account');
+  //Route::get('/account', 'UserController@account')->name('account');
   Route::get('/account/edit', 'UserController@account')->name('account-edit');
 });
 
