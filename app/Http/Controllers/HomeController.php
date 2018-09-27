@@ -22,6 +22,10 @@ class HomeController extends Controller
       }
     }
 
+    public function upload() {
+      return view ('/upload/upload');
+    }
+
     public function account()
     {
         return view('/account/account-settings');
