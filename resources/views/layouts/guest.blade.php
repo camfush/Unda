@@ -4,7 +4,6 @@
   <body>
     <div class="main-wrapper">
       <div class="app" id="app">
-    @include('layouts.header')
     @yield('content')
       </div>
     </div>
