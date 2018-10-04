@@ -58,7 +58,7 @@
         <div class="row">
           <div class="col-lg-12">
             <fieldset>
-              <legend>General</legend>
+              <legend>Settings</legend>
               <table class="table table-condensed table-responsive small">
                 <tbody>
                   <tr id="name">
