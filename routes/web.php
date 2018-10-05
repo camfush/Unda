@@ -13,7 +13,7 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index');
 
 Route::group(['middleware' => ['auth']], function() {
   Route::get('/upload', 'PostController@create')->name('upload');
