@@ -33,7 +33,11 @@
                 <li>
                   <a href="" class="notification-item">
                     <div class="img-col">
-                      <div class="img" style="background-image: url('assets/faces/1.png')"></div>
+                      @if(Auth::user()->profile_path)
+                        <div class="img" style="background-image: url('{{Storage::url(Auth::user()->profile_path)}}')"></div>
+                      @else
+                        <div class="img" style="background-image: url('{{URL::to('images/faces/1.png')}}')"></div>
+                      @endif
                     </div>
                     <div class="body-col">
                       <p>
@@ -59,7 +63,7 @@
                   <footer>
                     <ul>
                       <li>
-                        <a href=""> View All </a>
+                        <a href="{{URL::to('/notifications')}}"> View All </a>
                       </li>
                     </ul>
                   </footer>
