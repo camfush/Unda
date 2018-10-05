@@ -26,6 +26,11 @@ class AccountController extends Controller
       Notification::find($id)->destroy();
     }
 
+    public function notifications()
+    {
+      return view('account.notifications');
+    }
+
     public function friends()
     {
       return view('account.friends', ['friends' => Auth::user()->friends()]);

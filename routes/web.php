@@ -20,6 +20,7 @@ Route::group(['middleware' => ['auth']], function() {
   Route::get('/friends', 'AccountController@friends')->name('friends');
   Route::get('/myvideos', 'AccountController@myvideos')->name('myvideos');
   Route::get('/account', 'AccountController@show');
+  Route::get('/notifications', 'AccountController@notifications');
   Route::get('/viewnotification/{id}', 'AccountController@viewNotification');
   //Route::get('/account/edit', 'AccountController@account')->name('account-edit');
 });

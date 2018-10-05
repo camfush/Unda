@@ -73,7 +73,7 @@
                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
                   <a class="dropdown-item" href="{{URL::to('account')}}">
                     <i class="fa fa-user icon"></i> Profile </a>
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" href="{{URL::to('notifications')}}">
                       <i class="fa fa-bell icon"></i> Notifications </a>
                       <a class="dropdown-item" href="#">
                         <i class="fa fa-gear icon"></i> Settings </a>
@@ -86,7 +86,8 @@
                       </li>
           </ul>
             @else
-              login and signup here
+              <a class="button" href="{{URL::to('login')}}">Login</a>
+              <a class="button" href="{{URL::to('register')}}">Signup</a>
             @endif
     </div>
 </header>
