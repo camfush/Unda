@@ -21,27 +21,21 @@
             <br />
           </div>
           <div class="col-lg-12">
-            <form>
+            <form class="" action="{{route('posts.store')}}" method="post">
+              {{ csrf_field() }}
               <fieldset>
                 <legend>Video Details</legend>
                 <br />
                 <div class="row">
-                  <label class="col-lg-2" for="vtitle">Video Title</label>
-                  <input class="col-lg-5" id="vtitle" type="text" />
-                </div>
-                <div class="row">
-                  <br />
-                </div>
-                <div class="row">
                   <label class="col-lg-2" for="vfile">Select Video File</label>
-                  <input class="col-lg-5" id="vfile" type="file" />
+                  <input class="col-lg-5" id="vfile" name="vfile" type="file" />
                 </div>
                 <div class="row">
                   <br />
                 </div>
                 <div class="row">
                   <label class="col-lg-2" for="vdesc">Add Description</label>
-                  <textarea class="col-lg-5" id="vdesc" rows="4">
+                  <textarea class="col-lg-5" name="description" id="vdesc" rows="4">
 
                   </textarea>
                 </div>

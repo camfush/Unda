@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Http\Requests\StorePost;
-use Carbon;
+use \Carbon\Carbon;
+use Redirect;
+use URL;
+use Auth;
 
 class PostController extends Controller
 {
@@ -37,12 +40,22 @@ class PostController extends Controller
      */
     public function store(StorePost $request)
     {
-      $ffmpeg = FFMpeg\FFMpeg::create();
-      $video = $ffmpeg->open($request->input('video'));
-      $video->save(new FFMpeg\Format\Video\X264(), md5(Carbon::now()) . '.mp4');
-      $post = Post::create($request->all());
+      $ffmpeg = \FFMpeg\FFMpeg::create([
+          'ffmpeg.binaries'  => 'C:\Program Files (x86)\ffmpeg\bin\ffmpeg.exe',
+          'ffprobe.binaries' => 'C:\Program Files (x86)\ffmpeg\bin\ffprobe.exe'
+      ]);
+      $hash = md5(Carbon::now());
+      $vfile = $request->input('vfile');
+      $video = $ffmpeg->open($vfile);
+      $video->save(new \FFMpeg\Format\Video\X264(), $hash . '.mp4');
 
-      //return redirect(route();
+      $post = Post::create([
+          'user_id' => Auth::user()->id,
+          'hash' => $hash,
+          'length' => Hash::make($data['password']),
+          'description' => $request->input('description'),
+      ]);
+      return redirect(URL::to('/'));
     }
 
     /**
