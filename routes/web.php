@@ -22,8 +22,8 @@ Route::group(['middleware' => ['auth']], function() {
   Route::get('/account', 'AccountController@show');
   Route::get('/notifications', 'AccountController@notifications');
   Route::get('/viewnotification/{id}', 'AccountController@viewNotification');
-  //Route::get('/account/edit', 'AccountController@account')->name('account-edit');
+  Route::resource('posts', 'PostController', ['only' => ['create', 'store']]);
 });
 
-Route::resource('posts', 'PostController', ['except' => ['edit', 'update']]);
-Route::resource('comments', 'CommentController', ['except' => ['edit', 'update']]);
+Route::resource('posts', 'PostController', ['except' => ['edit', 'update', 'create', 'store']]);
+Route::resource('comments', 'CommentController', ['except' => ['edit', 'update', 'create', 'store']]);
