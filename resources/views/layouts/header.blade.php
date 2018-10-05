@@ -28,6 +28,8 @@
               </sup>
               @endif
             </a>
+            @if(count($user->notifications) > 0)
+              <!-- Show notifications here -->
             <div class="dropdown-menu notifications-dropdown-menu">
               <ul class="notifications-container">
                 <li>
@@ -68,10 +70,15 @@
                     </ul>
                   </footer>
                 </div>
+              @endif
               </li>
               <li class="profile dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                  <div class="img" style="background-image: url({{URL::to('images/faces/1.png')}})"> </div>
+                  @if(Auth::user()->profile_path)
+                    <div class="img" style="background-image: url('{{Storage::url(Auth::user()->profile_path)}}')"></div>
+                  @else
+                    <div class="img" style="background-image: url('{{URL::to('images/faces/1.png')}}')"></div>
+                  @endif
                   <span class="name"> {{Auth::user()->name}} </span>
                 </a>
                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
