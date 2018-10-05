@@ -1,0 +1,20 @@
+# Unda
+
+This is a web social application which allows users to upload clips for their friends.
+
+When cloning the project
+1. Make a database called "unda" in MySql
+2. In .env set:
+APP_NAME='Unda'
+
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=unda
+DB_USERNAME=root
+DB_PASSWORD='123'
+
+3. Run:
+php artisan migrate
+composer update
+php artisan storage:link
