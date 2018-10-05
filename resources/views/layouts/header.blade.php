@@ -1,3 +1,6 @@
+@php
+  $user = Auth::user();
+@endphp
 <header class="header">
     <div class="header-block header-block-collapse d-lg-none d-xl-none">
         <button class="collapse-btn" id="sidebar-collapse-btn">
@@ -19,9 +22,11 @@
           <li class="notifications new">
             <a href="" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
+              @if((count($user->notifications)) > 0)
               <sup>
-                <span class="counter">8</span>
+                <span class="counter">{{count($user->notifications)}}</span>
               </sup>
+              @endif
             </a>
             <div class="dropdown-menu notifications-dropdown-menu">
               <ul class="notifications-container">
