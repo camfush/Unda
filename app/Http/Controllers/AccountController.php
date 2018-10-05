@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use User;
 use Auth;
+use Notification;
 
 class AccountController extends Controller
 {
@@ -20,9 +21,9 @@ class AccountController extends Controller
       return Redirect::to('/');
     }
 
-    public function viewNotifications()
+    public function viewNotifications($id)
     {
-      Auth::user()->notifications()->delete();
+      Notification::find($id)->destroy();
     }
 
     public function friends()
