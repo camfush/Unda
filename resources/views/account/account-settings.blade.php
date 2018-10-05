@@ -63,7 +63,7 @@
                 <tbody>
                   <tr id="name">
                     <td>Name</td>
-                    <td>Cameron Frost</td>
+                    <td>{{$user->name}}</td>
                     <td><button id="edit-name" href="">Edit</button></td>
                   </tr>
                   <!--Different row is displayed when user clicks edit - toggle the display of the rows-->
@@ -134,7 +134,7 @@
                   </tr>
                   <tr id="email">
                     <td>Email</td>
-                    <td>102102571@student.swin.edu.au</td>
+                    <td>{{$user->email}}</td>
                     <td><button id="edit-email" href="">Edit</button></td>
                   </tr>
                   <tr id="email-edit" style="display:none;">
@@ -173,7 +173,7 @@
                   </tr>
                   <tr id="password">
                     <td>Password</td>
-                    <td>**********</td>
+                    <td>********</td>
                     <td><button id="edit-password" href="">Edit</button></td>
                   </tr>
                   <tr id="password-edit" style="display:none;">

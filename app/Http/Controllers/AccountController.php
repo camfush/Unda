@@ -12,4 +12,10 @@ class AccountController extends Controller
     {
       return view('account.account-settings', ['user' => Auth::user()]);
     }
+
+    public function destroy($id)
+    {
+      flash()->success('Account deleted!');
+      return Redirect::to('/');
+    }
 }
