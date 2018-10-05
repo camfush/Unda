@@ -18,7 +18,7 @@
             </a>
             <ul class="sidebar-nav">
               <li>
-                <a href="{{URL::to('/item-list')}}"> New upload </a>
+                <a href="{{URL::to('/upload')}}"> New upload </a>
               </li>
               <li>
                 <a href="{{URL::to('/item-editor')}}"> Video Editor </a>
