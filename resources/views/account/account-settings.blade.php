@@ -59,6 +59,14 @@
                     </td>
                     <td><td>
                   </tr>
+                  <tr id="picture">
+                    <td>Picture</td>
+                    <td>
+                      <a href="">
+                        <img src="http://www.abc.net.au/news/image/8709852-3x2-940x627.jpg" class="img-fluid rounded mx-auto d-block" width="50%" height="50%" />
+                      </a>
+                    </td>
+                  </tr>
                   <tr id="user">
                     <td>User Name</td>
                     <td>CamFush</td>
