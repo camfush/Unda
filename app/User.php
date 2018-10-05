@@ -42,6 +42,11 @@ class User extends Authenticatable
       return $this->hasMany('App\Reaction');
     }
 
+    public function friends()
+    {
+      return $this->hasMany('App\Friend');
+    }
+
     public function timeline()
     {
       //this will return a list posts in the timelien

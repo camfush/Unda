@@ -17,6 +17,8 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth']], function() {
   Route::get('/upload', 'PostController@create')->name('upload');
+  Route::get('/friends', 'PostController@friends')->name('friends');
+  Route::get('/myvideos', 'PostController@myvideos')->name('myvideos');
   Route::get('/account', 'AccountController@show');
   //Route::get('/account', 'UserController@account')->name('account');
   //Route::get('/account/edit', 'AccountController@account')->name('account-edit');
