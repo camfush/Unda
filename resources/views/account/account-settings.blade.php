@@ -16,7 +16,7 @@
         <div class="row">
           <div class="col-lg-12">
             <fieldset>
-              <legend>Settings</legend>
+              <legend>Account</legend>
               <table class="table table-condensed table-responsive small">
                 <tbody>
                   <tr id="name">

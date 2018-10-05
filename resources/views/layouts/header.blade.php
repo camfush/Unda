@@ -63,10 +63,10 @@
               <li class="profile dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                   <div class="img" style="background-image: url({{URL::to('images/faces/1.png')}})"> </div>
-                  <span class="name"> Jacob Lewis </span>
+                  <span class="name"> {{Auth::user()->name}} </span>
                 </a>
                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="{{URL::to('account')}}">
                     <i class="fa fa-user icon"></i> Profile </a>
                     <a class="dropdown-item" href="#">
                       <i class="fa fa-bell icon"></i> Notifications </a>
