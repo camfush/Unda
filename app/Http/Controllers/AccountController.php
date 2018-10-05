@@ -20,6 +20,11 @@ class AccountController extends Controller
       return Redirect::to('/');
     }
 
+    public function viewNotifications()
+    {
+      Auth::user()->notifications()->delete();
+    }
+
     public function friends()
     {
       return view('account.friends', ['friends' => Auth::user()->friends()]);
