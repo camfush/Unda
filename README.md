@@ -18,3 +18,7 @@ DB_PASSWORD='123'
 php artisan migrate
 composer update
 php artisan storage:link
+
+4. Follow this guide
+https://github.com/adaptlearning/adapt_authoring/wiki/Installing-FFmpeg
+to install ffmpeg
