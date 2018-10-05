@@ -26,12 +26,12 @@
             </ul>
           </li>
           <li>
-            <a href="">
+            <a href="{{URL::to('/myvideos')}}">
               <i class="fa fa-bar-chart"></i> My videos
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="{{URL::to('/friends')}}">
               <i class="fa fa-table"></i> Friends
             </a>
           </li>
