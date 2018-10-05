@@ -73,8 +73,10 @@
                       <a class="dropdown-item" href="#">
                         <i class="fa fa-gear icon"></i> Settings </a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="login.html">
-                          <i class="fa fa-power-off icon"></i> Logout </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                          @csrf
+                        <li><input type="submit" name="logout" value="Logout"></li>
+                        </form>
                         </div>
                       </li>
           </ul>
