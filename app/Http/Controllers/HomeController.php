@@ -21,13 +21,4 @@ class HomeController extends Controller
         return view('guest');
       }
     }
-
-    public function upload() {
-      return view ('/upload/upload');
-    }
-
-    public function account()
-    {
-        return view('/account/account-settings');
-    }
 }

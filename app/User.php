@@ -42,19 +42,18 @@ class User extends Authenticatable
       return $this->hasMany('App\Reaction');
     }
 
-    public function timeline()
+    public function friends()
     {
-      //this will return a list posts in the timelien
+      return $this->hasMany('App\Friend');
     }
 
-    // MUTATORS
-    public function setNameAttribute($value)
+    public function notifications()
     {
-      $result = '';
-      $resultarray = split($this->attributes['password'], ' ');
-      foreach ($resultarray as $word) {
-        $result = $result . ucfirst($word);
-      }
-      $this->attributes['password'] = $result;
+      return $this->hasMany('App\Notification');
+    }
+
+    public function timeline()
+    {
+      //this will return a list posts in the timeline
     }
 }

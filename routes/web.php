@@ -14,12 +14,15 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/account', 'HomeController@account')->name('home');
-Route::get('/upload', 'HomeController@upload')->name('upload');
 
 Route::group(['middleware' => ['auth']], function() {
-  //Route::get('/account', 'UserController@account')->name('account');
-  Route::get('/account/edit', 'UserController@account')->name('account-edit');
+  Route::get('/upload', 'PostController@create')->name('upload');
+  Route::get('/friends', 'AccountController@friends')->name('friends');
+  Route::get('/myvideos', 'AccountController@myvideos')->name('myvideos');
+  Route::get('/account', 'AccountController@show');
+  Route::get('/notifications', 'AccountController@notifications');
+  Route::get('/viewnotification/{id}', 'AccountController@viewNotification');
+  //Route::get('/account/edit', 'AccountController@account')->name('account-edit');
 });
 
 Route::resource('posts', 'PostController', ['except' => ['edit', 'update']]);

@@ -18,7 +18,7 @@
             </a>
             <ul class="sidebar-nav">
               <li>
-                <a href="{{URL::to('/item-list')}}"> New upload </a>
+                <a href="{{URL::to('/upload')}}"> New upload </a>
               </li>
               <li>
                 <a href="{{URL::to('/item-editor')}}"> Video Editor </a>
@@ -26,12 +26,12 @@
             </ul>
           </li>
           <li>
-            <a href="">
+            <a href="{{URL::to('/myvideos')}}">
               <i class="fa fa-bar-chart"></i> My videos
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="{{URL::to('/friends')}}">
               <i class="fa fa-table"></i> Friends
             </a>
           </li>

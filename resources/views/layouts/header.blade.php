@@ -1,3 +1,6 @@
+@php
+  $user = Auth::user();
+@endphp
 <header class="header">
     <div class="header-block header-block-collapse d-lg-none d-xl-none">
         <button class="collapse-btn" id="sidebar-collapse-btn">
@@ -19,9 +22,11 @@
           <li class="notifications new">
             <a href="" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
+              @if((count($user->notifications)) > 0)
               <sup>
-                <span class="counter">8</span>
+                <span class="counter">{{count($user->notifications)}}</span>
               </sup>
+              @endif
             </a>
             <div class="dropdown-menu notifications-dropdown-menu">
               <ul class="notifications-container">
@@ -63,23 +68,26 @@
               <li class="profile dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                   <div class="img" style="background-image: url({{URL::to('images/faces/1.png')}})"> </div>
-                  <span class="name"> Jacob Lewis </span>
+                  <span class="name"> {{Auth::user()->name}} </span>
                 </a>
                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="{{URL::to('account')}}">
                     <i class="fa fa-user icon"></i> Profile </a>
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" href="{{URL::to('notifications')}}">
                       <i class="fa fa-bell icon"></i> Notifications </a>
                       <a class="dropdown-item" href="#">
                         <i class="fa fa-gear icon"></i> Settings </a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="login.html">
-                          <i class="fa fa-power-off icon"></i> Logout </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                          @csrf
+                        <li><input type="submit" name="logout" value="Logout"></li>
+                        </form>
                         </div>
                       </li>
           </ul>
             @else
-              login and signup here
+              <a class="button" href="{{URL::to('login')}}">Login</a>
+              <a class="button" href="{{URL::to('register')}}">Signup</a>
             @endif
     </div>
 </header>
