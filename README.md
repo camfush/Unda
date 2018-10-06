@@ -24,3 +24,5 @@ https://github.com/adaptlearning/adapt_authoring/wiki/Installing-FFmpeg
 to install ffmpeg
 
 5. Set FFMPEG_BINARIES and FFPROBE_BINARIES in .env
+
+6. In your php.ini file set the max post and max file sizes to a large number, eg above 50mb
