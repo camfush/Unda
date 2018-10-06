@@ -22,3 +22,5 @@ php artisan storage:link
 4. Follow this guide
 https://github.com/adaptlearning/adapt_authoring/wiki/Installing-FFmpeg
 to install ffmpeg
+
+5. Set FFMPEG_BINARIES and FFPROBE_BINARIES in .env
