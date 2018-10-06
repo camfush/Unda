@@ -21,7 +21,7 @@
             <br />
           </div>
           <div class="col-lg-12">
-            <form class="" action="{{route('posts.store')}}" method="post">
+            <form class="" enctype="multipart/form-data" action="{{route('posts.store')}}" method="post">
               {{ csrf_field() }}
               <fieldset>
                 <legend>Video Details</legend>
@@ -35,9 +35,7 @@
                 </div>
                 <div class="row">
                   <label class="col-lg-2" for="vdesc">Add Description</label>
-                  <textarea class="col-lg-5" name="description" id="vdesc" rows="4">
-
-                  </textarea>
+                  <textarea class="col-lg-5" name="description" id="vdesc" rows="4"></textarea>
                 </div>
                 <div class="row">
                   <br />

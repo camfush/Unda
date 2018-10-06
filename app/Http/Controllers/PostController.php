@@ -9,6 +9,7 @@ use \Carbon\Carbon;
 use Redirect;
 use URL;
 use Auth;
+use Storage;
 
 class PostController extends Controller
 {
@@ -47,19 +48,15 @@ class PostController extends Controller
      */
     public function store(StorePost $request)
     {
-      $ffmpeg = \FFMpeg\FFMpeg::create([
-          'ffmpeg.binaries'  => 'C:\Program Files (x86)\ffmpeg\bin\ffmpeg.exe',
-          'ffprobe.binaries' => 'C:\Program Files (x86)\ffmpeg\bin\ffprobe.exe'
-      ]);
+      ini_set('memory_limit','10240M');
       $hash = md5(Carbon::now());
-      $vfile = $request->input('vfile');
-      $video = $ffmpeg->open($vfile);
-      $video->save(new \FFMpeg\Format\Video\X264(), $hash . '.mp4');
+      $vfile = $request->file('vfile');
+      Storage::put('/videos/' . $hash . '.mp4', $vfile->getEncoded(), 'public');
 
       $post = Post::create([
           'user_id' => Auth::user()->id,
           'hash' => $hash,
-          'length' => Hash::make($data['password']),
+          'length' => 10,//Hash::make($data['password']),
           'description' => $request->input('description'),
       ]);
       return redirect(URL::to('/'));
