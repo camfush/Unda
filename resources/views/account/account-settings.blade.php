@@ -28,14 +28,15 @@
                   <tr id="name-edit" style="display:none;">
                     <td>Name</td>
                     <td>
-                        <form>
+                        <form method="post" action="{{URL::to('/account/update/name')}}">
+                          {{ csrf_field() }}
                           <fieldset>
                             <legend class="col-lg-12 text-center">Edit Name</legend>
                             <br />
 
                             <div class="row">
                               <label class="col-lg-3" for="new-first">First Name: </label>
-                              <input class="col-lg-5" type="text" id="new-first" />
+                              <input class="col-lg-5" name="firstname" type="text" id="new-first" />
                               <label class="col-lg-4" id="first-validity"><!--TODO Add glyphicon tick -->Name is valid</label>
                             </div>
 
@@ -43,7 +44,7 @@
 
                             <div class="row">
                               <label class="col-lg-3" for="new-last">Last Name: </label>
-                              <input class="col-lg-5" type="text" id="new-last" />
+                              <input class="col-lg-5" name="lastname" type="text" id="new-last" />
                               <label class="col-lg-4" id="last-validity">Name is valid</label>
                             </div>
 
@@ -67,6 +68,7 @@
                       </a>
                     </td>
                   </tr>
+                  {{--
                   <tr id="user">
                     <td>User Name</td>
                     <td>CamFush</td>
@@ -98,6 +100,7 @@
                     </td>
                     <td></td>
                   </tr>
+                  --}}
                   <tr id="email">
                     <td>Email</td>
                     <td>{{$user->email}}</td>
@@ -106,14 +109,15 @@
                   <tr id="email-edit" style="display:none;">
                     <td>Email</td>
                     <td>
-                        <form>
+                        <form method="post" action="{{URL::to('/account/update/email')}}">
+                          {{ csrf_field() }}
                           <fieldset>
                             <legend class="col-lg-12 text-center">Change Email</legend>
                             <br />
 
                             <div class="row">
                               <label class="col-lg-3" for="new-email">Email: </label>
-                              <input class="col-lg-5" type="text" id="new-email" />
+                              <input class="col-lg-5" name="email" type="text" id="new-email" />
                               <label class="col-lg-4" id="email-validity">Email is valid</label>
                             </div>
 
@@ -121,7 +125,7 @@
 
                             <div class="row">
                               <label class="col-lg-3" for="conf-email">Confirm Email: </label>
-                              <input class="col-lg-5" type="text" id="conf-email" />
+                              <input class="col-lg-5" name="email-confirm" type="text" id="conf-email" />
                               <label class="col-lg-4" id="email-match">Email does not match</label>
                             </div>
 
@@ -145,14 +149,15 @@
                   <tr id="password-edit" style="display:none;">
                     <td>Email</td>
                     <td>
-                        <form>
+                        <form method="post" action="{{URL::to('/account/update/password')}}">
+                          {{ csrf_field() }}
                           <fieldset>
                             <legend class="col-lg-12 text-center">Change Password</legend>
                             <br />
 
                             <div class="row">
                               <label class="col-lg-3" for="old-password">Old Password: </label>
-                              <input class="col-lg-5" type="text" id="old-password" />
+                              <input class="col-lg-5" name="password-old" type="text" id="old-password" />
                               <label class="col-lg-4" id="password-correct"></label>
                             </div>
 
@@ -160,7 +165,7 @@
 
                             <div class="row">
                               <label class="col-lg-3" for="new-password">New Password: </label>
-                              <input class="col-lg-5" type="text" id="new-password" />
+                              <input class="col-lg-5" name="password" type="text" id="new-password" />
                               <label class="col-lg-4" id="password-validity">Password must be 8 characters</label>
                             </div>
 
@@ -168,7 +173,7 @@
 
                             <div class="row">
                               <label class="col-lg-3" for="conf-password">Confirm Password: </label>
-                              <input class="col-lg-5" type="text" id="conf-password" />
+                              <input class="col-lg-5" name="password-confirm" type="text" id="conf-password" />
                               <label class="col-lg-4" id="password-match">Password does not match</label>
                             </div>
 

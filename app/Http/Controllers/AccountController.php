@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use User;
 use Auth;
 use Notification;
+use Redirect;
 
 class AccountController extends Controller
 {
@@ -39,5 +40,39 @@ class AccountController extends Controller
     public function myvideos()
     {
       return view('account.myvideos', ['videos' => Auth::user()->posts()]);
+    }
+
+    public function updatename(Request $request)
+    {
+      $user = Auth::user();
+      $user->name = $request->input('firstname') . ' ' . $request->input('lastname');
+      $user->save();
+      return Redirect::to('/account');
+    }
+
+    public function updatepicture(Request $request)
+    {
+      $user = Auth::user();
+      $user->name = $request->input('firstname') . ' ' . $request->input('lastname');
+      $user->save();
+      return Redirect::to('/account');
+
+    }
+
+    public function updateemail(Request $request)
+    {
+      $user = Auth::user();
+      $user->email = $request->input('email');
+      $user->save();
+      return Redirect::to('/account');
+
+    }
+
+    public function updatepassword(Request $request)
+    {
+      $user = Auth::user();
+      $user->password = Hash::make($request->input('firstname'));
+      $user->save();
+      return Redirect::to('/account');
     }
 }
