@@ -8,10 +8,11 @@
         </button>
     </div>
     <div class="header-block header-block-search">
-        <form role="search">
+        <form role="search" method="post" action="{{URL::to('/search')}}">
             <div class="input-container">
+                {{ csrf_field() }}
                 <i class="fa fa-search"></i>
-                <input type="search" placeholder="Search Unda....">
+                <input type="search" value="@isset($search){{$search}}@endisset" name="search" placeholder="Search Unda....">
                 <div class="underline"></div>
             </div>
         </form>

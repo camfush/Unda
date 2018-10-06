@@ -22,6 +22,11 @@ class PostController extends Controller
         return view('posts.index', ['posts', $posts]);
     }
 
+    public function search(Request $request)
+    {
+      return view('posts.search', ['search' => $request->input('search')]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
