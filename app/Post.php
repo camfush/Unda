@@ -24,4 +24,10 @@ class Post extends Model
     {
       return $this->belongsTo('App\User');
     }
+
+    // SCOPES
+    public function scopeSearch($query, $column, $value)
+    {
+      return $query->where($column, 'LIKE', "%$value%");
+    }
 }

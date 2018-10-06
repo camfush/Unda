@@ -24,7 +24,9 @@ class PostController extends Controller
 
     public function search(Request $request)
     {
-      return view('posts.search', ['search' => $request->input('search')]);
+      $search = $request->input('search');
+      $results = Post::where('name', 'LIKE', "%$search%");
+      return view('posts.search', ['results' => $results, 'search' => $search]);
     }
 
     /**
@@ -34,7 +36,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('upload.upload');
+      return view('upload.upload');
     }
 
     /**
