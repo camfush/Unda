@@ -51,7 +51,7 @@ class PostController extends Controller
       ini_set('memory_limit','10240M');
       $hash = md5(Carbon::now());
       $vfile = $request->file('vfile');
-      Storage::put('/videos/', $vfile, 'public');
+      Storage::put('/posts/', $vfile, 'public');
 
       $post = Post::create([
           'user_id' => Auth::user()->id,
