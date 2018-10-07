@@ -28,7 +28,7 @@ class PostController extends Controller
     public function search(Request $request)
     {
       $search = $request->input('search');
-      $results = Post::where('name', 'LIKE', "%$search%");
+      $results = Post::where('description', 'LIKE', "%$search%")->paginate(3);
       return view('posts.search', ['results' => $results, 'search' => $search]);
     }
 
