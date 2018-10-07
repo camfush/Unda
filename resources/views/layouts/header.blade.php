@@ -87,7 +87,7 @@
                     <i class="fa fa-user icon"></i> Profile </a>
                     <a class="dropdown-item" href="{{URL::to('notifications')}}">
                       <i class="fa fa-bell icon"></i> Notifications </a>
-                      <a class="dropdown-item" href="#">
+                      <a class="dropdown-item" href="{{URL::to('account/settings')}}">
                         <i class="fa fa-gear icon"></i> Settings </a>
                         <div class="dropdown-divider"></div>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" >

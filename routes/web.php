@@ -21,6 +21,7 @@ Route::group(['middleware' => ['auth']], function() {
   Route::get('/friends', 'AccountController@friends')->name('friends');
   Route::get('/myvideos', 'AccountController@myvideos')->name('myvideos');
   Route::get('/account', 'AccountController@show');
+  Route::get('/account/settings', 'AccountController@settings');
   Route::post('/account/update/name', 'AccountController@updatename');
   Route::post('/account/update/picture', 'AccountController@updatepicture');
   Route::post('/account/update/email', 'AccountController@updateemail');

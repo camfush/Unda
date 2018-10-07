@@ -12,7 +12,12 @@ class AccountController extends Controller
 {
     public function show()
     {
-      return view('account.account-settings', ['user' => Auth::user()]);
+      return view('account.account', ['user' => Auth::user()]);
+    }
+
+    public function settings()
+    {
+      return view('account.settings');
     }
 
     public function destroy()

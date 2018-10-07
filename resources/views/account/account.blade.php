@@ -2,8 +2,6 @@
 @section('page-title', 'View your details')
 @push('scripts')
   <script src="{{ asset('js/edit-toggle.js') }}"></script>
-
-  <script src="{{ asset('js/app.js') }}" defer></script>
 @endpush
 
 @section('content')
