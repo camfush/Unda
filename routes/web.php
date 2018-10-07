@@ -25,6 +25,7 @@ Route::group(['middleware' => ['auth']], function() {
   Route::post('/account/update/picture', 'AccountController@updatepicture');
   Route::post('/account/update/email', 'AccountController@updateemail');
   Route::post('/account/update/password', 'AccountController@updatepassword');
+  Route::post('/react', 'ReactionController@store');  //requires an ID for a post and a reaction in the request. Send through a CSRF token too
   Route::get('/notifications', 'AccountController@notifications');
   Route::get('/viewnotification/{id}', 'AccountController@viewNotification');
   Route::resource('posts', 'PostController', ['only' => ['create', 'store']]);
