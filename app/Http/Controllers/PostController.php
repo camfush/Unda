@@ -49,13 +49,12 @@ class PostController extends Controller
     public function store(StorePost $request)
     {
       ini_set('memory_limit','10240M');
-      $hash = md5(Carbon::now());
       $vfile = $request->file('vfile');
-      Storage::put('/posts/', $vfile, 'public');
+      $hash = Storage::put('public/posts/', $vfile, 'public');
 
       $post = Post::create([
           'user_id' => Auth::user()->id,
-          'hash' => $hash,
+          'hash' => basename($hash),
           'length' => 10,//Hash::make($data['password']),
           'description' => $request->input('description'),
       ]);
