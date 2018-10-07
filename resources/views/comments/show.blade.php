@@ -1,0 +1,1 @@
+<p>{{$element->content}}</p>
