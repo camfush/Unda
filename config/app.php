@@ -147,6 +147,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Pbmedia\LaravelFFMpeg\FFMpegServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class;
 
 
         /*
@@ -192,6 +193,7 @@ return [
         'Event' => Illuminate\Support\Facades\Event::class,
         'FFMpeg' => Pbmedia\LaravelFFMpeg\FFMpegFacade::class,
         'File' => Illuminate\Support\Facades\File::class,
+        'Flash' => Laracasts\Flash\Flash::class,
         'Gate' => Illuminate\Support\Facades\Gate::class,
         'Hash' => Illuminate\Support\Facades\Hash::class,
         'Lang' => Illuminate\Support\Facades\Lang::class,

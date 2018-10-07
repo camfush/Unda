@@ -10,6 +10,8 @@ use Redirect;
 use URL;
 use Auth;
 use Storage;
+use App\Notification;
+use Session;
 
 class PostController extends Controller
 {
@@ -58,6 +60,16 @@ class PostController extends Controller
           'length' => 10,//Hash::make($data['password']),
           'description' => $request->input('description'),
       ]);
+
+      /*foreach (Auth::user()->friends as $friend) {
+        Notification::create([
+          'user_id' => $friend->id,
+          'content' => Auth::user()->name,
+        ]);
+      }*/
+
+      flash()->success('Your post has been uploaded');
+
       return redirect(URL::to('/'));
     }
 

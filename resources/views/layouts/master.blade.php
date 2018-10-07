@@ -6,6 +6,7 @@
       <div class="app" id="app">
     @include('layouts.header')
     @include('layouts.sidebar')
+    @include('flash::message')
     @yield('content')
       </div>
     </div>
