@@ -28,7 +28,7 @@
                 <br />
                 <div class="row">
                   <label class="col-lg-2" for="vfile">Select Video File</label>
-                  <input class="col-lg-5" id="vfile" name="vfile" type="file" />
+                  <input class="col-lg-5" id="vfile" name="vfile" type="file" accept="video/mp4" />
                 </div>
                 <div class="row">
                   <br />
