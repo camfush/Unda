@@ -24,8 +24,7 @@
                   </tr>
                   <!--Different row is displayed when user clicks edit - toggle the display of the rows-->
                   <tr id="name-edit" style="display:none;">
-                    <td>Name</td>
-                    <td>
+                    <td colspan=3>
                         <form method="post" action="{{URL::to('/account/update/name')}}">
                           {{ csrf_field() }}
                           <fieldset>
@@ -49,14 +48,13 @@
                             <br />
 
                             <div class="row">
-                              <div class="col-lg-4"></div>
+                              <div class="col-lg-5"></div>
                               <input class="small col-lg-2 center-block btn btn-primary" type="submit" value="Update"/>
-                              <div class="col-lg-6"></div>
+                              <div class="col-lg-5"></div>
                             </div>
                           </fieldset>
                         </form>
                     </td>
-                    <td><td>
                   </tr>
                   <tr id="picture">
                     <td>Picture</td>
@@ -66,39 +64,6 @@
                       </a>
                     </td>
                   </tr>
-                  {{--
-                  <tr id="user">
-                    <td>User Name</td>
-                    <td>CamFush</td>
-                    <td><button id="edit-user" href="">Edit</button></td>
-                  </tr>
-                  <tr id="user-edit" style="display:none;">
-                    <td>User Name</td>
-                    <td>
-                        <form>
-                          <fieldset>
-                            <legend class="col-lg-12 text-center">Edit User Name</legend>
-                            <br />
-
-                            <div class="row">
-                              <label class="col-lg-3" for="new-user">User Name: </label>
-                              <input class="col-lg-5" type="text" id="new-user" />
-                              <label class="col-lg-4" id="user-availability">Name is available</label>
-                            </div>
-
-                            <br />
-
-                            <div class="row">
-                              <div class="col-lg-4"></div>
-                              <input class="small col-lg-2 center-block btn btn-primary" type="submit" value="Update"/>
-                              <div class="col-lg-6"></div>
-                            </div>
-                          </fieldset>
-                        </form>
-                    </td>
-                    <td></td>
-                  </tr>
-                  --}}
                   <tr id="email">
                     <td>Email</td>
                     <td>{{$user->email}}</td>

@@ -22,11 +22,6 @@ function ToggleName() {
   ToggleTable("name", "name-edit");
 }
 
-function ToggleUser() {
-  currentEdit = "user";
-  ToggleTable("user", "user-edit");
-}
-
 function ToggleEmail() {
   currentEdit = "email";
   ToggleTable("email", "email-edit");
@@ -42,8 +37,6 @@ var currentEdit = "";
 function init() {
   var editName = FetchElement("edit-name");
   editName.onclick = ToggleName;
-  var editUser = FetchElement("edit-user");
-  editUser.onclick = ToggleUser;
   var editEmail = FetchElement("edit-email");
   editEmail.onclick = ToggleEmail;
   var editPassword = FetchElement("edit-password");
