@@ -108,8 +108,7 @@
                     <td><button id="edit-password" href="">Edit</button></td>
                   </tr>
                   <tr id="password-edit" style="display:none;">
-                    <td>Email</td>
-                    <td>
+                    <td colspan=3>
                         <form method="post" action="{{URL::to('/account/update/password')}}">
                           {{ csrf_field() }}
                           <fieldset>
@@ -141,14 +140,13 @@
                             <br />
 
                             <div class="row">
-                              <div class="col-lg-4"></div>
+                              <div class="col-lg-5"></div>
                               <input class="small col-lg-2 center-block btn btn-primary" type="submit" value="Update"/>
-                              <div class="col-lg-6"></div>
+                              <div class="col-lg-5"></div>
                             </div>
                           </fieldset>
                         </form>
                     </td>
-                    <td><td>
                   </tr>
                 </tbody>
               </table>
