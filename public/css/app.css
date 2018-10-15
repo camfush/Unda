@@ -842,6 +842,14 @@ label,
   .form-control.boxed:focus {
     border: 1px solid #85CE36; }
 
+.reduce-size {
+  font-size: 10px;
+}
+
+.reduce-size-slightly {
+  font-size: 13px;
+}
+
 .radio,
 .checkbox {
   display: none; }
