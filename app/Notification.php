@@ -12,10 +12,15 @@ class Notification extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'content',
+        'user_id', 'source_user_id', 'source_type', 'content',
     ];
 
     public function user()
+    {
+      return $this->belongsTo('App\User');
+    }
+
+    public function sourceuser()
     {
       return $this->belongsTo('App\User');
     }

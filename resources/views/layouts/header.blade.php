@@ -33,44 +33,22 @@
               <!-- Show notifications here -->
             <div class="dropdown-menu notifications-dropdown-menu">
               <ul class="notifications-container">
-                <li>
-                  <a href="" class="notification-item">
-                    <div class="img-col">
-                      @if(Auth::user()->profile_path)
-                        <div class="img" style="background-image: url('{{Storage::url(Auth::user()->profile_path)}}')"></div>
-                      @else
-                        <div class="img" style="background-image: url('{{URL::to('images/faces/1.png')}}')"></div>
-                      @endif
-                    </div>
-                    <div class="body-col">
-                      <p>
-                        <span class="accent">Jacob Lewis</span> uploaded new video:
-                        <span class="accent">Testing Unda out</span>. </p>
-                      </div>
-                    </a>
-                  </li>
+                @if(count($user->notifications) > 0)
+                  @foreach (Auth::user()->notifications as $notification)
+                    @include('notifications.show', ['element' => $notification])
+                  @endforeach
+                @else
+                  <p>No notifications yet</p>
+                @endif
+              </ul>
+              <footer>
+                <ul>
                   <li>
-                    <a href="" class="notification-item">
-                      <div class="img-col">
-                        <div class="img" style="background-image: url('assets/faces/1.png')"></div>
-                      </div>
-                      <div class="body-col">
-                        <p>
-                          <span class="accent">Jacob Lewis</span> commented on your video:
-                          <span class="accent">Blah blah blah</span>. </p>
-                        </div>
-                      </a>
-                    </li>
-
-                  </ul>
-                  <footer>
-                    <ul>
-                      <li>
-                        <a href="{{URL::to('/notifications')}}"> View All </a>
-                      </li>
-                    </ul>
-                  </footer>
-                </div>
+                    <a href="{{URL::to('/notifications')}}"> View All </a>
+                  </li>
+                </ul>
+              </footer>
+            </div>
               @endif
               </li>
               <li class="profile dropdown">
