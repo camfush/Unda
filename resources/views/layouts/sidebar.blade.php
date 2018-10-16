@@ -7,7 +7,7 @@
     </div>
     <nav class="menu">
       <ul class="sidebar-menu metismenu" id="sidebar-menu">
-        <li class="active">
+        <li>
           <a href="{{URL::to('/')}}">
             <i class="fa fa-home"></i> Home </a>
           </li>
