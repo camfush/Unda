@@ -22,6 +22,6 @@ class Notification extends Model
 
     public function sourceuser()
     {
-      return $this->belongsTo('App\User');
+      return $this->belongsTo('App\User', 'source_user_id');
     }
 }
