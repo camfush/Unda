@@ -39,7 +39,7 @@ class AccountController extends Controller
 
     public function friends()
     {
-      return view('account.friends', ['friends' => Auth::user()->friends()]);
+      return view('friends.friends', ['friends' => Auth::user()->friends()]);
     }
 
     public function myvideos()
