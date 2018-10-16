@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Reaction;
-use Auth\User;
+use Auth;
 
 class ReactionController extends Controller
 {
@@ -25,10 +25,11 @@ class ReactionController extends Controller
      */
     public function store(Request $request)
     {
+      $object = json_decode($request->getContent());
       $reaction = Reaction::create([
         'user_id' => Auth::user()->id,
-        'post_id' => $request->input('post_id'),
-        'type' => $request->input('type'),
+        'post_id' => $object->post_id,
+        'type' => $object->type,
       ]);
 
       return $reaction;
