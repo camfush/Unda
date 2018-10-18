@@ -30,6 +30,11 @@ class RegisterController extends Controller
      */
     protected $redirectTo = '/';
 
+    public function showRegistrationForm()
+    {
+      return view('guest');
+    }
+
     /**
      * Create a new controller instance.
      *
