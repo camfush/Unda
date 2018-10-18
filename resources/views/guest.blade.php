@@ -21,11 +21,18 @@
 
             <div class="container">
                 <div class="signup-content">
-                    <form method="POST" id="signup-form" class="signup-form">
+                    <form method="POST" id="signup-form" class="signup-form" action="{{ route('register') }}">
                       {{ csrf_field() }}
                         <img class="logo" src="{{asset('images/logo.png')}}">
 
                         <h2 class="form-title">Create account</h2>
+                        @if (!$errors->isEmpty())
+                            <span class="invalid-feedback" role="alert">
+                              @foreach ($errors->all() as $error)
+                                <strong>{{ $error }}</strong>
+                              @endforeach
+                            </span>
+                        @endif
                         <div class="form-group">
                             <input type="text" class="form-input" name="name" id="name" placeholder="Your Name"/>
                         </div>
