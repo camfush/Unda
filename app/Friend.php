@@ -12,16 +12,21 @@ class Friend extends Model
      * @var array
      */
     protected $fillable = [
-        'user1', 'user2',
+        'friend1', 'friend2', 'findfriend'
     ];
 
-    public function user1()
+    public function friend1()
     {
-      return $this->hasMany('App\User', 'friend1');
+      return $this->belongsTo('App\User', 'friend1');
     }
 
-    public function user2()
+    public function friend2()
     {
-      return $this->hasMany('App\User', 'friend2');
+      return $this->belongsTo('App\User', 'friend2');
+    }
+
+    public function findfriend()
+    {
+      return $this->belongsTo('App\User', 'friend1');
     }
 }

@@ -44,7 +44,12 @@ class User extends Authenticatable
 
     public function friends()
     {
-      return $this->hasMany('App\Friend');
+      return $this->hasMany('App\Friend', 'friend1');
+    }
+
+    public function friends2()
+    {
+      return $this->hasMany('App\Friend', 'friend2');
     }
 
     public function notifications()
