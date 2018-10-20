@@ -12,3 +12,8 @@ Scenario: Logged in as Cameron Frost
 	Given I am logged in as "Cameron Frost"
 	And I am at the path "/"
 	Then I should see "Cameron Frost" at the top of the screen
+
+Scenario: Logged in as Another Cameron
+	Given I am logged in as "Another Cameron"
+	And I am at the path "/"
+	Then I should see "Another Cameron" at the top of the screen
