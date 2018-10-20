@@ -40,11 +40,10 @@
                             <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"/>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-input" name="password" id="password" placeholder="Password"/>
-                            <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                            <input type="password" class="form-input" name="password" id="password" placeholder="Password"/>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-input" name="password-confirm" id="re_password" placeholder="Repeat your password"/>
+                            <input type="password" class="form-input" name="password_confirmation" id="re_password" placeholder="Repeat your password"/>
                         </div>
                         <div class="form-group">
                             <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
