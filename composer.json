@@ -15,6 +15,7 @@
         "php-ffmpeg/extras": "^0.3.1"
     },
     "require-dev": {
+        "behat/behat": "^3.5",
         "filp/whoops": "^2.0",
         "fzaninotto/faker": "^1.4",
         "mockery/mockery": "^1.0",
