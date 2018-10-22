@@ -4,7 +4,9 @@
       <video controls><source src="{{Storage::url('posts/' . $element->hash)}}" type="video/mp4"/></video>
     </div>
     <div class="col-lg-4 comments" style="background-color: #d7dde4">
-      <p><h3>Comments</h3></p>
+      <p><h5>Description</h5></p>
+      <p class="col-lg-12 text-left" >{{$element->description}}</p>
+      <p><h5>Comments</h5></p>
       @if(count($element->comments) > 0)
       <table>
         @foreach ($element->comments as $comment)
@@ -23,14 +25,13 @@
     </div>
   </div>
   <div class="row">
-    <p>{{$element->description}}</p>
-    <div class="col-lg-9 m-1 interact-bar">
-      <form class="" action="{{URL::to('/react')}}" method="post">
-        <button type="button" data-react="like" data-post="{{$element->id}}" class="btn custom-button react-button">Love (<span>{{count($element->likes)}}</span>)</button>
-        <button type="button" data-react="dislike" data-post="{{$element->id}}" class="btn custom-button react-button">Hate (<span>{{count($element->dislikes)}}</span>)</button>
+    <div class="col-lg-9 m-1 interact-bar row">
+      <form class="d-inline" action="{{URL::to('/react')}}" method="post">
+        <button type="button" data-react="like" data-post="{{$element->id}}" class="btn custom-button react-button col-lg-3">Love</button>
+        <button type="button" data-react="dislike" data-post="{{$element->id}}" class="btn custom-button react-button col-lg-3">Hate</button>
       </form>
-      <button type="button" class="btn custom-button">Share</button>
-      <button type="button" class="btn custom-button">Report</button>
+      <button type="button" class="btn custom-button col-lg-3">Share</button>
+      <button type="button" class="btn custom-button col-lg-3">Report</button>
     </div>
   </div>
 </div>
