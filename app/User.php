@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Post;
+use DB;
 
 class User extends Authenticatable
 {
@@ -57,8 +59,8 @@ class User extends Authenticatable
       return $this->hasMany('App\Notification');
     }
 
-    public function timeline()
+    public function getTimelineAttribute()
     {
-      //this will return a list posts in the timeline
+      return Post::all();
     }
 }
