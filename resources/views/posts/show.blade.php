@@ -5,7 +5,10 @@
     </div>
     <div class="col-lg-4 comments" style="background-color: #d7dde4">
       <p><h5>Description</h5></p>
-      <p class="col-lg-12 text-left" >{{$element->description}}</p>
+      <div class="row">
+        <p class="col-lg-4 reduce-size text-left">{{$element->user->name}}:</p>
+        <p class="col-lg-8 reduce-size text-left" >{{$element->description}}</p>
+      </div>
       <p><h5>Comments</h5></p>
       @if(count($element->comments) > 0)
       <table>
