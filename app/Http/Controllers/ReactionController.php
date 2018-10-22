@@ -26,13 +26,18 @@ class ReactionController extends Controller
     public function store(Request $request)
     {
       $object = json_decode($request->getContent());
+      if (!(Reaction::where('user_id', Auth::user()->id)->get()->isEmpty())) {
+        Reaction::where('user_id', Auth::user()->id)->delete();
+        return "DELETED";
+      }
+      else {
       $reaction = Reaction::create([
         'user_id' => Auth::user()->id,
         'post_id' => $object->post_id,
         'type' => $object->type,
       ]);
-
       return $reaction;
+      }
     }
 
     /**
