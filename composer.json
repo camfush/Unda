@@ -11,6 +11,7 @@
         "laracasts/flash": "^3.0",
         "laravel/framework": "5.6.*",
         "laravel/tinker": "^1.0",
+        "league/flysystem-aws-s3-v3": "^1.0",
         "pbmedia/laravel-ffmpeg": "^2.0.1",
         "php-ffmpeg/extras": "^0.3.1"
     },

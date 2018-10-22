@@ -1,0 +1,1 @@
+zip -r prod.zip .ebextensions app bootstrap config database public resources routes .env .gitattributes .gitignore artisan composer.json composer.lock package-lock.json package.json phpunit.xml server.php webpack.mix.js
