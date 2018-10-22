@@ -27,8 +27,8 @@
   <div class="row">
     <div class="col-lg-8 m-1 interact-bar row">
       <form class="d-inline" action="{{URL::to('/react')}}" method="post">
-        <button type="button" data-react="like" data-post="{{$element->id}}" class="btn custom-button react-button col-lg-3">Love</button>
-        <button type="button" data-react="dislike" data-post="{{$element->id}}" class="btn custom-button react-button col-lg-3">Hate</button>
+        <button type="button" data-react="like" data-post="{{$element->id}}" class="btn custom-button react-button">Love (<span>{{count($element->likes)}}</span>)</button>
+        <button type="button" data-react="dislike" data-post="{{$element->id}}" class="btn custom-button react-button">Hate (<span>{{count($element->dislikes)}}</span>)</button>
       </form>
       <button type="button" class="btn custom-button col-lg-3">Share</button>
       <button type="button" class="btn custom-button col-lg-3">Report</button>
