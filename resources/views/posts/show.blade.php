@@ -26,8 +26,8 @@
     <p>{{$element->description}}</p>
     <div class="col-lg-9 m-1 interact-bar">
       <form class="" action="{{URL::to('/react')}}" method="post">
-        <button type="button" data-react="like" data-post="{{$element->id}}" class="btn custom-button react-button">Love</button>
-        <button type="button" data-react="dislike" data-post="{{$element->id}}" class="btn custom-button react-button">Hate</button>
+        <button type="button" data-react="like" data-post="{{$element->id}}" class="btn custom-button react-button">Love (<span>{{count($element->likes)}}</span>)</button>
+        <button type="button" data-react="dislike" data-post="{{$element->id}}" class="btn custom-button react-button">Hate (<span>{{count($element->dislikes)}}</span>)</button>
       </form>
       <button type="button" class="btn custom-button">Share</button>
       <button type="button" class="btn custom-button">Report</button>

@@ -25,6 +25,16 @@ class Post extends Model
       return $this->belongsTo('App\User');
     }
 
+    public function likes()
+    {
+      return $this->hasMany('App\Reaction')->where('type', 'like');
+    }
+
+    public function dislikes()
+    {
+      return $this->hasMany('App\Reaction')->where('type', 'dislike');
+    }
+
     // SCOPES
     public function scopeSearch($query, $column, $value)
     {
