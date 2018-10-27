@@ -11,7 +11,7 @@ before_script:
   - composer self-update
   - composer install --prefer-source --no-interaction
   - php artisan key:generate
-  - php artisan migrate --seed
+  - php artisan migrate:install --no-interaction -vvv
   
 script:
   - php artisan migrate --no-interaction -vvv
