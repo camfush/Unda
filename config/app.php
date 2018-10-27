@@ -147,7 +147,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Pbmedia\LaravelFFMpeg\FFMpegServiceProvider::class,
-        Laracasts\Flash\FlashServiceProvider::class;
+        Laracasts\Flash\FlashServiceProvider::class,
 
 
         /*
