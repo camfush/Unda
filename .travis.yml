@@ -5,16 +5,17 @@ language: php
 
 php:
   - '7.1'
-  - '7.0'
   
 before_script:
   - cp .env.travis .env
   - composer self-update
-  - composer install --prefer-source --no-interaction --dev
+  - composer install --prefer-source --no-interaction
   - phpenv rehash
   - php artisan key:generate
-  - php artisan migrate
+  - php artisan migrate:install --no-interaction -vvv
   
 script:
   - vendor/bin/phpunit --coverage-text
+  - php artisan migrate --no-interaction -vvv
+  - php artisan migrate:rollback --no-interaction -vvv
   - phpcs --ignore=app/Http/Controllers/Auth,app/Http/Controllers/Controller.php app/Http/Controllers
