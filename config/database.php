@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'testing'),
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,7 +56,7 @@ return [
 
         'testing' => [
             'driver' => 'mysql',
-            'host' => env('DB_TEST_HOST', 'localhost'),
+            'host' => env('DB_TEST_HOST', '127.0.0.1'),
             'database' => env('DB_TEST_DATABASE', 'testing_db'),
             'username' => env('DB_TEST_USERNAME', 'root'),
             'password' => env('DB_TEST_PASSWORD', 'secret'),
