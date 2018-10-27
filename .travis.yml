@@ -5,6 +5,8 @@ language: php
 
 php:
   - '7.1'
+
+dist: precise
   
 before_script:
   - composer self-update
