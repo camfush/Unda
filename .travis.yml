@@ -11,6 +11,9 @@ before_script:
   - composer install --no-interaction
   - cp .env.travis .env
   - phpenv rehash
+  - php artisan key:generate
+  - php artisan jwt:generate
+  - php artisan migrate
   
 script:
   - vendor/bin/phpunit --coverage-text
