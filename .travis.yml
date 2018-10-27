@@ -1,16 +1,18 @@
-os:
-  - linux
-
 language: php
 
 php:
-  - '7.1'
-  
+- '7.1'
+
+services:
+- mysql
+
 before_script:
-  - cp .env.travis .env
-  - composer self-update
-  - composer install --prefer-source --no-interaction
-  - php artisan key:generate
-  
+- cp .env.travis .env
+- mysql -e 'create database testing;'
+- composer self-update
+- composer install --no-interaction
+- php artisan key:generate
+- php artisan migrate --seed
+
 script:
-  - vendor/bin/behat;
+    - vendor/bin/phpunit
