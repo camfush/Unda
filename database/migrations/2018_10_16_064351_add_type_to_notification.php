@@ -25,7 +25,7 @@ class AddTypeToNotification extends Migration
      */
     public function down()
     {
-      Schema::table('notifications', function (Blueprint $table) {
+      Schema::table('posts', function (Blueprint $table) {
         $table->dropIfExists('notification_type');
       });
     }
