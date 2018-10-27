@@ -12,7 +12,6 @@ before_script:
   - cp .env.travis .env
   - phpenv rehash
   - php artisan key:generate
-  - php artisan jwt:generate
   - php artisan migrate
   
 script:
