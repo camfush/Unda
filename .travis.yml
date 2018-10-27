@@ -5,18 +5,17 @@ language: php
 
 php:
   - '7.1'
-
-dist: precise
   
 before_script:
+  - cp .env.travis .env
+  - mysql -e 'create databse testing'
   - composer self-update
   - composer install --prefer-source --no-interaction
-  - phpenv rehash
   - php artisan key:generate
-  - php artisan migrate:install --no-interaction -vvv
+  - php artisan migrate --seed
   
 script:
-  - vendor/bin/phpunit --coverage-text
   - php artisan migrate --no-interaction -vvv
   - php artisan migrate:rollback --no-interaction -vvv
+  - vendor/bin/phpunit --coverage-text
   - phpcs --ignore=app/Http/Controllers/Auth,app/Http/Controllers/Controller.php app/Http/Controllers
