@@ -14,7 +14,8 @@ before_script:
 - composer install --no-interaction
 - php artisan key:generate
 - php artisan migrate
-- mysql -e 'show databases'
+- mysql -e 'show databases;'
+- mysql -e 'SELECT * FROM INFORMATION_SCHEMA.TABLES;'
 
 script:
     - vendor/bin/phpunit
