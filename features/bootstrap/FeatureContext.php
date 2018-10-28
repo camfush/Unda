@@ -18,7 +18,7 @@ class FeatureContext extends TestCase implements Context
 {
     public function __construct()
     {
-        putenv('DB_CONNECTION=sqlite');
+        putenv('DB_CONNECTION=mysql');
         putenv('DB_DATABASE=:memory:');
         parent::setUp();
     }
