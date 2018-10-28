@@ -19,7 +19,7 @@ class FeatureContext extends TestCase implements Context
     public function __construct()
     {
         putenv('DB_CONNECTION=mysql');
-        putenv('DB_DATABASE=:memory:');
+        putenv('DB_DATABASE=unda');
         parent::setUp();
     }
 
